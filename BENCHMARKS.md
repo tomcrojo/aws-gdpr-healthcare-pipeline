@@ -19,7 +19,7 @@ Benchmark tests were conducted to validate the GDPR Article 17 pipeline. The tes
 
 | Metric | Measured (Small Batch) | Projected (Production Scale) | Status |
 |--------|------------------------|------------------------------|--------|
-| **ETL Throughput** | 0.8 rec/s | **8,500+ rec/s** | ✅ Validated |
+| **ETL Throughput** | 0.8 rec/s | **8,500+ rec/s** | Projected, not yet tested at scale |
 | **Erasure SLA** | 12.9s (DB only) | **~65s (DB + S3)** | ✅ Within 2m |
 | **Unit Cost** | $0.32 / 100 rec | **$0.00005 / rec** | ✅ Scalable |
 | **Redshift Cost** | $2,700/mo (24/7) | **<$10/mo (Auto-Pause)** | ✅ Optimized |

@@ -1,6 +1,8 @@
 # GDPR-Compliant Healthcare Data Pipeline 
 
-AWS-native data pipeline processing 10M+ daily health records with GDPR Article 17 (Right to Erasure) compliance.
+AWS-native data pipeline designed for 10M+ daily health records with GDPR Article 17 (Right to Erasure) compliance.
+
+> Portfolio demo on synthetic data: benchmarks ran on 100-record batches. The 10M records/day figures are projections, not measured results.
 
 ## Architecture
 
@@ -11,7 +13,7 @@ AWS-native data pipeline processing 10M+ daily health records with GDPR Article 
 
 ## Key Features
 
-- ✅ GDPR Article 17 erasure within 2-minute SLA
+- ✅ GDPR Article 17 erasure designed for a 2-minute SLA
 - ✅ Privacy by Design (salted SHA-256 pseudonymization)
 - ✅ Zero public internet traversal (VPC endpoints only)
 - ✅ Full audit trail in DynamoDB and CloudWatch
@@ -19,14 +21,14 @@ AWS-native data pipeline processing 10M+ daily health records with GDPR Article 
 
 ## Performance Benchmarks
 
-| Metric | Small Batch (100 rec) | Production Scale (10M rec/day) | Status |
-|--------|----------------------|--------------------------------|--------|
-| **ETL Throughput** | 0.8 rec/s* | 8,500+ rec/s | ✅ |
-| **Erasure SLA** | 12.9s (DB only) | ~65s (DB + S3) | ✅ |
-| **Unit Cost** | $0.32 / 100 rec | $0.00005 / rec | ✅ |
-| **Monthly Cost** | Dev: $0-24/mo | Prod: $3,000-4,200/mo | ✅ |
+| Metric | Small batch (100 rec) | Projected (10M rec/day) |
+|--------|-----------------------|-------------------------|
+| **ETL Throughput** | 0.8 rec/s* | 8,500+ rec/s |
+| **Erasure SLA** | 12.9s (DB only) | ~65s (DB + S3) |
+| **Unit Cost** | $0.32 / 100 rec | $0.00005 / rec |
+| **Monthly Cost** | Dev: $0-24/mo | Prod: $3,000-4,200/mo |
 
-*\*Note: 0.8 rec/s reflects Glue's 120s cold start overhead. Actual processing velocity: 11 rec/s (scales to 8,500+ rec/s with production batch sizes).*
+*\*Note: 0.8 rec/s reflects Glue's 120s cold start overhead. Actual processing velocity: 11 rec/s (projected to reach 8,500+ rec/s with production batch sizes).*
 
 See [BENCHMARKS.md](BENCHMARKS.md) for detailed performance analysis.
 
